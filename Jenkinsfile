@@ -3,8 +3,7 @@ pipeline {
         docker { image 'node:7-alpine' }
     }
     stages {
-        stage
-
+       
         stage('Install anchore engine') 
         {
         steps {
