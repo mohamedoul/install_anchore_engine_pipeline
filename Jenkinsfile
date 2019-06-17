@@ -4,7 +4,9 @@ pipeline {
     }
     stages {
 
-        stage('Install anchore engine') {
+        stage('Install anchore engine') 
+        {
+        steps {
         sh '''
         mkdir ~/aevolume
         cd ~/aevolume
@@ -15,6 +17,7 @@ pipeline {
         docker-compose pull
         docker-compose up -d
         '''
+        }
     }
         stage('Test') {
         steps {
