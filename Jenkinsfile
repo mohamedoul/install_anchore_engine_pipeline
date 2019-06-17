@@ -14,7 +14,7 @@ pipeline {
         writeFile file:'dummy', text:''
         }
            sh 'ls -l'
-        }
+
         sh ''' 
         cd ~/aevolume
         docker pull docker.io/anchore/anchore-engine:latest
