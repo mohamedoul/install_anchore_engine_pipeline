@@ -6,12 +6,18 @@ pipeline {
         
         
        stage ('create directory') {
-    sh 'ls -l'
-    dir ('~/aevolume') {
+           steps{
+        sh 'ls -l'
+        dir ('~/aevolume') {
         writeFile file:'dummy', text:''
         }
-    sh 'ls -l'
+         sh 'ls -l'
         }
+       }
+        
+        
+        
+        
         stage('Install anchore engine') 
         {
         steps {
