@@ -22,8 +22,8 @@ pipeline {
         {
         steps {
         sh ''' 
-      
-        docker pull docker.io/anchore/anchore-engine:latest
+        myImage = docker.image("docker.io/anchore/anchore-engine:latest")
+        myImage.pull ()
         docker create --name ae docker.io/anchore/anchore-engine:latest
         docker cp ae:/docker-compose.yaml ~/aevolume/docker-compose.yaml
         docker rm ae
